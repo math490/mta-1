@@ -7,8 +7,9 @@ body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
-	    background-size: cover;
 	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	    background-attachment: fixed;
         }
 
         h1 {
