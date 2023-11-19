@@ -6,7 +6,9 @@ body {
             height: 100vh;
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url("https://gartic.com.br/imgs/mural/an/ana_malenosa/urso-segurando-um-coracao.png");
+            background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
+	    background-size: cover;
+	    background-repeat: no-repeat;
         }
 
         h1 {
