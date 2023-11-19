@@ -12,6 +12,7 @@
         let pontosXElement = document.getElementById('pontosX');
         let pontosOElement = document.getElementById('pontosO');
         let pontosVelhaElement = document.getElementById('pontosVelha');
+	let modoIA = false;
 
         function jogar(linha, coluna) {
             if (tabuleiro[linha][coluna] === '' && !jogoFinalizado()) {
@@ -156,3 +157,57 @@
 	        }
 	    }
 	}
+
+// IA FUNCTION
+
+    function alternarModoJogo() {
+        modoIA = !modoIA;
+        reiniciarJogo();
+        const modoBtn = document.getElementById('modoBtn');
+        modoBtn.textContent = modoIA ? 'Player vs Player' : 'Player vs IA';
+    }
+
+ function jogadaMaquina() {
+            // Implemente a lógica para a jogada da máquina (IA) aqui
+            // Por enquanto, a jogada será aleatória
+            let linha, coluna;
+            do {
+                linha = Math.floor(Math.random() * 3);
+                coluna = Math.floor(Math.random() * 3);
+            } while (tabuleiro[linha][coluna] !== '');
+
+            setTimeout(() => {
+        tabuleiro[linha][coluna] = 'O';
+        atualizarTabuleiro();
+
+        if (verificarVitoria()) {
+            mensagemElement.textContent = 'A máquina venceu!';
+            atualizarPontuacao();
+        } else if (verificarVelha()) {
+            mensagemElement.textContent = 'Empate (velha)!';
+            pontosVelha++;
+            pontosVelhaElement.textContent = pontosVelha;
+        } else {
+            jogadorAtual = 'X';
+        }
+    }, 500); // 500 milissegundos (meio segundo)
+}
+
+function quadradoClicado(linha, coluna) {
+    if (modoIA && jogadorAtual === 'O') {
+        // Se estiver no modo IA e for o turno da máquina, chama a função da jogada da máquina
+        jogadaMaquina();
+    } else {
+        // Caso contrário, chama a função jogar normalmente
+        jogar(linha, coluna);
+    }
+}
+
+let tabuleiroElement = document.getElementById('tabuleiro');
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        tabuleiroElement.rows[i].cells[j].addEventListener('click', function() {
+            quadradoClicado(i, j);
+        });
+    }
+}
