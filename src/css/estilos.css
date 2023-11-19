@@ -1,0 +1,64 @@
+body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://gartic.com.br/imgs/mural/an/ana_malenosa/urso-segurando-um-coracao.png");
+        }
+
+        h1 {
+            text-align: center;
+            color: crimson;
+        }
+
+        #placar {
+            font-size: 18px;
+            margin-bottom: 10px;
+	    color: blue;
+        }
+
+        #tabuleiro {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+            font-size: 24px;
+            cursor: pointer;
+	    color: darkorange;
+        }
+
+        #mensagem {
+            font-size: 18px;
+            margin-top: 10px;
+            color: orange;
+        }
+
+        #reiniciarBtn {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #reiniciarBtn:hover {
+            background-color: #45a049;
+        }
+
+	.vencedor {
+	   background-color: yellow; /* Altere a cor conforme necessário */
+	}

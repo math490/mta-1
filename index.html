@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./src/css/estilos.css">
+
+    <title>Jogo da Velha</title>
+
+</head>
+
+<body>
+
+    <h1>Jogo da Velha</h1>
+    <div id="placar">Placar: X - <span id="pontosX">0</span> | O - <span id="pontosO">0</span> | Velha - <span id="pontosVelha">0</span></div>
+
+    <table id="tabuleiro">
+
+        <tr>
+            <td onclick="jogar(0, 0)"></td>
+            <td onclick="jogar(0, 1)"></td>
+            <td onclick="jogar(0, 2)"></td>
+        </tr>
+        <tr>
+            <td onclick="jogar(1, 0)"></td>
+            <td onclick="jogar(1, 1)"></td>
+            <td onclick="jogar(1, 2)"></td>
+        </tr>
+        <tr>
+            <td onclick="jogar(2, 0)"></td>
+            <td onclick="jogar(2, 1)"></td>
+            <td onclick="jogar(2, 2)"></td>
+        </tr>
+
+    </table>
+
+    <p id="mensagem"></p>
+    <button id="reiniciarBtn" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+
+    <script src="./src/js/index.js"></script>
+
+</body>
+</html>
