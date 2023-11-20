@@ -13,7 +13,8 @@
 
 <body>
 
-    <div class="autor">by Matheus Teles de Andrade</div>
+    <main>
+
     <h1>Jogo da Velha</h1>
     <div id="placar">Placar: X - <span id="pontosX">0</span> | O - <span id="pontosO">0</span> | Velha - <span id="pontosVelha">0</span></div>
 
@@ -39,10 +40,12 @@
 
     <p id="mensagem"></p>
     <button id="reiniciarBtn" onclick="reiniciarJogo()">Reiniciar Jogo</button>
-    <button id="modoBtn" onclick="alternarModoJogo()">Player vs IA</button>
+    <button id="modoBtn" onclick="alternarModoJogo()">Jogador vs IA</button>
+
 
     <footer>
-	<p>&copy; 2023 - Todos os direitos reservados - v.0.9.4.0</p>
+        <div class="autor">Por: Matheus Teles de Andrade</div>
+	<p>&copy; 2023 - Todos os direitos reservados - v.0.9.3.8</p>
 	<nav>
 		<ul>
 			<li><a href="#">Termos de uso</a></li>
@@ -52,6 +55,8 @@
 		</ul>
 	</nav>
     </footer>
+
+    </main>
 
     <script src="./src/js/index.js"></script>
 
