@@ -164,7 +164,7 @@
         modoIA = !modoIA;
         reiniciarJogo();
         const modoBtn = document.getElementById('modoBtn');
-        modoBtn.textContent = modoIA ? 'Player vs Player' : 'Player vs IA';
+        modoBtn.textContent = modoIA ? 'Jogador vs Jogador' : 'Jogador vs IA';
     }
 
     function jogadaMaquina() {
