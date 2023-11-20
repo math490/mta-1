@@ -190,7 +190,7 @@
         } else {
             jogadorAtual = 'X';
         }
-    }, 500); // 500 milissegundos (meio segundo)
+    }, 250); // 250 milissegundos (meio segundo)
 }
 
 function quadradoClicado(linha, coluna) {
