@@ -1,15 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
+
+    background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+
+}
+
+main {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
-	    background-repeat: no-repeat;
-	    background-size: 100% 100%;
-	    background-attachment: fixed;
+            background-color: rgba(51, 51, 51, 0.3);
         }
 
         h1 {
@@ -66,12 +76,12 @@ body {
 	   background-color: yellow; /* Altere a cor conforme necessário */
 	}
 	footer {
-	background-color: rgba(51, 51, 51, 0.5);
 	color: #fff;
 	padding: 20px;
 	text-align: center;
 	margin-top: 50px;
-	bottom: 0;
+	bottom: 30px;
+    background-color: rgba(51, 51, 51, 0.2);
 	}
 
 	ul {
@@ -91,9 +101,10 @@ body {
 	}
 
 	.autor {
-		background-color: rgba(51, 51, 51, 0.5);
 		top: 0;
 		color: #c0c0c0;
-		text-align: left;
-		margin-left: -88%;
+		text-align: center;
+        background-color: rgba(51, 51, 51, 0.2);
+        margin-bottom: 5px;
+        margin-top: -5px;
 	}
