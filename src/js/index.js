@@ -14,22 +14,22 @@
         let pontosVelhaElement = document.getElementById('pontosVelha');
 	let modoIA = false;
 
-        function jogar(linha, coluna) {
-            if (tabuleiro[linha][coluna] === '' && !jogoFinalizado()) {
-                tabuleiro[linha][coluna] = jogadorAtual;
-                atualizarTabuleiro();
-                if (verificarVitoria()) {
-                    mensagemElement.textContent = `Jogador ${jogadorAtual} venceu!`;
-                    atualizarPontuacao();
-                } else if (verificarVelha()) {
-                    mensagemElement.textContent = 'Empate (velha)!';
-                    pontosVelha++;
-                    pontosVelhaElement.textContent = pontosVelha;
-                } else {
-                    jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X';
-                }
+    function jogar(linha, coluna) {
+        if (tabuleiro[linha][coluna] === '' && !jogoFinalizado()) {
+            tabuleiro[linha][coluna] = jogadorAtual;
+            atualizarTabuleiro();
+            if (verificarVitoria()) {
+                mensagemElement.textContent = `Jogador ${jogadorAtual} venceu!`;
+                atualizarPontuacao();
+            } else if (verificarVelha()) {
+                mensagemElement.textContent = 'Empate (velha)!';
+                pontosVelha++;
+                pontosVelhaElement.textContent = pontosVelha;
+            } else {
+                jogadorAtual = jogadorAtual === 'X' ? 'O' : 'X';
             }
         }
+    }
 
         function reiniciarJogo() {
             tabuleiro = [
@@ -167,31 +167,35 @@
         modoBtn.textContent = modoIA ? 'Player vs Player' : 'Player vs IA';
     }
 
- function jogadaMaquina() {
+    function jogadaMaquina() {
+        if (!jogoFinalizado() && jogadorAtual === 'O') {
             // Implemente a lógica para a jogada da máquina (IA) aqui
             // Por enquanto, a jogada será aleatória
-            let linha, coluna;
-            do {
-                linha = Math.floor(Math.random() * 3);
-                coluna = Math.floor(Math.random() * 3);
-            } while (tabuleiro[linha][coluna] !== '');
-
+    
+            // Adicione um atraso de 500 milissegundos antes da jogada da máquina
             setTimeout(() => {
-        tabuleiro[linha][coluna] = 'O';
-        atualizarTabuleiro();
-
-        if (verificarVitoria()) {
-            mensagemElement.textContent = 'A máquina venceu!';
-            atualizarPontuacao();
-        } else if (verificarVelha()) {
-            mensagemElement.textContent = 'Empate (velha)!';
-            pontosVelha++;
-            pontosVelhaElement.textContent = pontosVelha;
-        } else {
-            jogadorAtual = 'X';
+                let linha, coluna;
+                do {
+                    linha = Math.floor(Math.random() * 3);
+                    coluna = Math.floor(Math.random() * 3);
+                } while (tabuleiro[linha][coluna] !== '');
+    
+                tabuleiro[linha][coluna] = 'O';
+                atualizarTabuleiro();
+    
+                if (verificarVitoria()) {
+                    mensagemElement.textContent = 'A máquina venceu!';
+                    atualizarPontuacao();
+                } else if (verificarVelha()) {
+                    mensagemElement.textContent = 'Empate (velha)!';
+                    pontosVelha++;
+                    pontosVelhaElement.textContent = pontosVelha;
+                } else {
+                    jogadorAtual = 'X';
+                }
+            }, 150); // 500 milissegundos de atraso
         }
-    }, 100); // 100 milissegundos (meio segundo)
-}
+    }
 
 function quadradoClicado(linha, coluna) {
     if (modoIA && jogadorAtual === 'O') {
