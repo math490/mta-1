@@ -1,110 +1,110 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-
-    background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-attachment: fixed;
-
+  background-image: url("https://img.freepik.com/fotos-premium/paisagem-de-anime_950633-816.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-            background-color: rgba(51, 51, 51, 0.3);
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: rgba(51, 51, 51, 0.3);
+}
 
-        h1 {
-            text-align: center;
-            color: crimson;
-        }
+h1 {
+  text-align: center;
+  color: crimson;
+  -webkit-text-stroke: 1px black;
+}
 
-        #placar {
-            font-size: 18px;
-            margin-bottom: 10px;
-	    color: blue;
-        }
+#placar {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: cornsilk;
+  background-color: rgba(51, 51, 51, 0.3);
+}
 
-        #tabuleiro {
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+#tabuleiro {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
 
-        td {
-            width: 70px;
-            height: 70px;
-            border: 1px solid #000;
-            text-align: center;
-            font-size: 30px;
-            cursor: pointer;
-	    color: darkorange;
-        }
+td {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 30px;
+  cursor: pointer;
+  color: darkorange;
+}
 
-        #mensagem {
-            font-size: 18px;
-            margin-top: 10px;
-            color: orange;
-        }
+#mensagem {
+  font-size: 18px;
+  margin-top: 10px;
+  color: cornsilk;
+}
 
-        #reiniciarBtn {
-            margin-top: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
+#reiniciarBtn {
+  margin-top: 20px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
 
-        #reiniciarBtn:hover {
-            background-color: #45a049;
-        }
+#reiniciarBtn:hover {
+  background-color: rgb(221, 35, 72);
+}
 
-	.vencedor {
-	   background-color: yellow; /* Altere a cor conforme necessário */
-	}
-	footer {
-	color: #fff;
-	padding: 20px;
-	text-align: center;
-	margin-top: 50px;
-	bottom: 30px;
-    background-color: rgba(51, 51, 51, 0.2);
-	}
+.vencedor {
+  background-color: yellow; /* Altere a cor conforme necessário */
+}
+footer {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  bottom: 30px;
+  background-color: rgba(51, 51, 51, 0.2);
+}
 
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-	li {
-		display: inline-block;
-		margin: 0 10px;
-	}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
-	a {
-		color: #fff;
-		text-decoration: none;
-	}
+a {
+  color: #fff;
+  text-decoration: none;
+}
 
-	.autor {
-		top: 0;
-		color: #c0c0c0;
-		text-align: center;
-        background-color: rgba(51, 51, 51, 0.2);
-        margin-bottom: 5px;
-        margin-top: -5px;
-	}
+.autor {
+  top: 0;
+  color: #c0c0c0;
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0.2);
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
