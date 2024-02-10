@@ -221,34 +221,80 @@ function alternarModoJogo() {
 }
 
 function jogadaMaquina() {
-  if (!jogoFinalizado() && jogadorAtual === "O") {
-    // Implemente a lógica para a jogada da máquina (IA) aqui
-    // Por enquanto, a jogada será aleatória
+    if (!jogoFinalizado() && jogadorAtual === "O") {
+        setTimeout(() => {
+            let jogadaFeita = false;
 
-    // Adicione um atraso de 500 milissegundos antes da jogada da máquina
-    setTimeout(() => {
-      let linha, coluna;
-      do {
-        linha = Math.floor(Math.random() * 3);
-        coluna = Math.floor(Math.random() * 3);
-      } while (tabuleiro[linha][coluna] !== "");
+            // Verifica se o quadrado do meio está vazio e o marca, se possível
+            if (!jogadaFeita && tabuleiro[1][1] === "") {
+                tabuleiro[1][1] = "O";
+                jogadaFeita = true;
+            }
 
-      tabuleiro[linha][coluna] = "O";
-      atualizarTabuleiro();
+            // Verifica se pode vencer
+            if (!jogadaFeita) {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (tabuleiro[i][j] === "") {
+                            tabuleiro[i][j] = "O";
+                            if (verificarVitoria()) {
+                                jogadaFeita = true;
+                                break;
+                            } else {
+                                tabuleiro[i][j] = "";
+                            }
+                        }
+                    }
+                    if (jogadaFeita) break;
+                }
+            }
 
-      if (verificarVitoria()) {
-        mensagemElement.textContent = "A máquina venceu!";
-        atualizarPontuacao();
-      } else if (verificarVelha()) {
-        mensagemElement.textContent = "Empate (velha)!";
-        pontosVelha++;
-        pontosVelhaElement.textContent = pontosVelha;
-      } else {
-        jogadorAtual = "X";
-      }
-    }, 150); // 500 milissegundos de atraso
-  }
+            // Verifica se pode bloquear o jogador
+            if (!jogadaFeita) {
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (tabuleiro[i][j] === "") {
+                            tabuleiro[i][j] = "X";
+                            if (verificarVitoria()) {
+                                tabuleiro[i][j] = "O";
+                                jogadaFeita = true;
+                                break;
+                            } else {
+                                tabuleiro[i][j] = "";
+                            }
+                        }
+                    }
+                    if (jogadaFeita) break;
+                }
+            }
+
+            // Se não houver oportunidade de vitória ou bloqueio, joga aleatoriamente
+            if (!jogadaFeita) {
+                let linha, coluna;
+                do {
+                    linha = Math.floor(Math.random() * 3);
+                    coluna = Math.floor(Math.random() * 3);
+                } while (tabuleiro[linha][coluna] !== "");
+
+                tabuleiro[linha][coluna] = "O";
+            }
+
+            atualizarTabuleiro();
+
+            if (verificarVitoria()) {
+                mensagemElement.textContent = "A máquina venceu!";
+                atualizarPontuacao();
+            } else if (verificarVelha()) {
+                mensagemElement.textContent = "Empate (velha)!";
+                pontosVelha++;
+                pontosVelhaElement.textContent = pontosVelha;
+            } else {
+                jogadorAtual = "X";
+            }
+        }, 150); // Atraso de 150 milissegundos
+    }
 }
+
 
 function quadradoClicado(linha, coluna) {
   if (modoIA && jogadorAtual === "O") {
